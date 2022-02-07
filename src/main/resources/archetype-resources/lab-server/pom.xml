@@ -29,7 +29,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>${groupId}.server.Server</mainClass>
+							<mainClass>${project.groupId}.server.Server</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -53,9 +53,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>${groupId}</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>lab-common</artifactId>
-			<version>${version}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 	</dependencies>

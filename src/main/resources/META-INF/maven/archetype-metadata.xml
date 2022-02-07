@@ -61,7 +61,6 @@
         <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
-            <include>.gitignore</include>
             <include>lab-server.iml</include>
           </includes>
         </fileSet>
