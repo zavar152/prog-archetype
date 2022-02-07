@@ -85,6 +85,15 @@
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
+        <module name="ClassTypeParameterName">
+            <property name="format" value="^[A-Z]{1,3}${symbol_dollar}"/>
+        </module>
+        <module name="InterfaceTypeParameterName">
+            <property name="format" value="^[A-Z]{1,3}${symbol_dollar}"/>
+        </module>
+        <module name="MethodTypeParameterName">
+            <property name="format" value="^[A-Z]{1,3}${symbol_dollar}"/>
+        </module>
 
         <!-- Checks for imports                              -->
         <!-- See http://checkstyle.sf.net/config_import.html -->
@@ -97,8 +106,12 @@
 
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
-        <module name="LineLength"/>
-        <module name="MethodLength"/>
+        <module name="LambdaBodyLength">
+            <property name="max" value="15"/>
+        </module>
+        <module name="MethodLength">
+            <property name="max" value="40"/>
+        </module>
         <module name="ParameterNumber"/>
 
         <!-- Checks for whitespace                               -->
@@ -123,29 +136,64 @@
         <!-- See http://checkstyle.sf.net/config_blocks.html -->
         <module name="AvoidNestedBlocks"/>
         <module name="EmptyBlock"/>
+        <module name="EmptyCatchBlock"/>
         <module name="LeftCurly"/>
         <module name="NeedBraces"/>
         <module name="RightCurly"/>
 
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
-        <module name="AvoidInlineConditionals"/>
+        <module name="AvoidDoubleBraceInitialization"/>
+        <module name="CovariantEquals"/>
+        <module name="DeclarationOrder"/>
+        <module name="DefaultComesLast"/>
         <module name="EmptyStatement"/>
+        <module name="EqualsAvoidNull"/>
         <module name="EqualsHashCode"/>
-        <module name="HiddenField"/>
-        <module name="IllegalInstantiation"/>
+        <module name="FallThrough"/>
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true"/>
+            <property name="ignoreSetter" value="true"/>
+            <property name="setterCanReturnItsClass" value="true"/>
+        </module>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>
         <module name="MissingSwitchDefault"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="NestedForDepth">
+            <property name="max" value="2"/>
+        </module>
+        <module name="NestedTryDepth"/>
+        <module name="NestedIfDepth">
+            <property name="max" value="2"/>
+        </module>
+        <module name="OneStatementPerLine"/>
+        <module name="ParameterAssignment"/>
+        <module name="ReturnCount">
+            <property name="max" value="4"/>
+            <property name="maxForVoid" value="3"/>
+        </module>
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
+        <module name="VariableDeclarationUsageDistance">
+            <property name="allowedDistance" value="5"/>
+        </module>
+
+        <module name="CyclomaticComplexity">
+            <property name="max" value="15"/>
+        </module>
 
         <!-- Checks for class design                         -->
         <!-- See http://checkstyle.sf.net/config_design.html -->
-        <module name="DesignForExtension"/>
         <module name="FinalClass"/>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="InnerTypeLast"/>
         <module name="InterfaceIsType"/>
-        <module name="VisibilityModifier"/>
+        <module name="MutableException"/>
+        <module name="OneTopLevelClass"/>
+        <module name="VisibilityModifier">
+            <property name="allowPublicFinalFields" value="true"/>
+        </module>
 
         <!-- Miscellaneous other checks.                   -->
         <!-- See http://checkstyle.sf.net/config_misc.html -->
